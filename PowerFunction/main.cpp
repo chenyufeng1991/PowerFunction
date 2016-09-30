@@ -41,6 +41,7 @@ double power1(double x ,int n)
     return n >= 0 ? result : 1/result;
 }
 
+// 递归实现
 double power2(double x ,int n)
 {
     int times = n / 2;
@@ -61,22 +62,10 @@ double power2(double x ,int n)
 
     if (remain == 0)
     {
-        return power2(x,times) * power2(x, times);
+        return power2(x, times) * power2(x, times);
     }
     else
     {
-        return power2(x,times) * power2(x, times) * x;
+        return n > 0 ? power2(x, times) * power2(x, times) * x : power2(x, times) * power2(x, times) * (1 / x);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
