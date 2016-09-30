@@ -23,7 +23,7 @@ double power2(double x ,int n);
 int main(int argc, const char * argv[])
 {
     cout << power1(2.0, -2) << endl;
-    cout << power2(2.0, 10) << endl;
+    cout << power2(2.0, -3) << endl;
 
     return 0;
 }
@@ -53,6 +53,10 @@ double power2(double x ,int n)
     if (n == 1)
     {
         return x;
+    }
+    if (n == -1)
+    {
+        return 1 / x;
     }
 
     if (remain == 0)
