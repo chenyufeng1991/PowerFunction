@@ -18,10 +18,12 @@ using namespace std;
  */
 
 double power1(double x ,int n);
+double power2(double x ,int n);
 
 int main(int argc, const char * argv[])
 {
     cout << power1(2.0, -2) << endl;
+    cout << power2(2.0, 10) << endl;
 
     return 0;
 }
@@ -38,3 +40,39 @@ double power1(double x ,int n)
 
     return n >= 0 ? result : 1/result;
 }
+
+double power2(double x ,int n)
+{
+    int times = n / 2;
+    int remain = n % 2;
+
+    if (n == 0)
+    {
+        return 1.0;
+    }
+    if (n == 1)
+    {
+        return x;
+    }
+
+    if (remain == 0)
+    {
+        return power2(x,times) * power2(x, times);
+    }
+    else
+    {
+        return power2(x,times) * power2(x, times) * x;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
